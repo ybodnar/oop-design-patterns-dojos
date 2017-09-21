@@ -1,14 +1,7 @@
 package com.fridaynightcommits.patterns.observer;
 
-class DataElement {
+public class DataElement {
     private int data;
-
-    @Override
-    public String toString() {
-        return "DataElement{" +
-                "data=" + data +
-                '}';
-    }
 
     public DataElement(int data) {
         this.data = data;
@@ -16,5 +9,12 @@ class DataElement {
 
     int getData() {
         return data;
+    }
+
+    @Override
+    public String toString() {
+        return "DataElement{" +
+                "data=" + data +
+                '}';
     }
 }
