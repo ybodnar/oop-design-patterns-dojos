@@ -1,5 +1,5 @@
 package com.fridaynightcommits.patterns.observer;
 
-interface Observer {
+public interface Observer {
     void update(DataElement dataElement);
 }

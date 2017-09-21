@@ -1,16 +1,21 @@
-package com.fridaynightcommits.patterns.observer;
+package com.fridaynightcommits.patterns.observer.impl;
+
+import com.fridaynightcommits.patterns.observer.DataElement;
+import com.fridaynightcommits.patterns.observer.Observer;
+import com.fridaynightcommits.patterns.observer.Subject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-class DataProvider implements Subject {
+
+public class DataProvider implements Subject {
     private List<Observer> observers;
     private DataElement dataElement;
 
     public DataProvider() {
         this.observers = new ArrayList<>();
     }
-
 
     @Override
     public void registerObserver(Observer observer) {
@@ -27,6 +32,10 @@ class DataProvider implements Subject {
         for (Observer observer : observers) {
             observer.update(dataElement);
         }
+    }
+
+    public List<Observer> getObservers() {
+        return Collections.unmodifiableList(observers);
     }
 
     public DataElement getDataElement() {
